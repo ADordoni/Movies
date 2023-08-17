@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AltaVista</title>
+</head>
+<body>
+    <div>
+        @ViewBag.mensaje
+        <form method="post" action="/CargaVista/Alta">            
+            Número de Usuario:
+            <input type="number" name="id" />
+            <br />            
+            Película:
+            <input type="text" name="pelicula" />
+            <br />
+            Fecha:
+            <input type="date" name="periodo" />
+            <br />
+            <input type="submit" name="confirmar" />
+        </form>
+    </div>
+    <div>
+        <a href="/CargaVista/Index">Vistas</a>
+    </div>
+</body>
+</html>

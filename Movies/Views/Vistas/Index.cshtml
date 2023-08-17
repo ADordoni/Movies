@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Movies.Models.Usuario>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Data</title>
+    </head>    
+    <body>       
+         <div>
+            <a href="/Vistas/Periodo">Cantidad por Periodo</a>
+        </div>
+        <div>
+            <a href="/Vistas/Edad">Cantidad por Edad</a>
+        </div>
+        <div>
+            <a href="/Vistas/Sexo">Cantidad por Género</a>
+        </div>
+        <div>
+            <a href="/Vistas/PeriodoSexo">Cantidad por Periodo y Género</a>
+        </div>
+        <div>
+            <a href="/Home/Index">Volver</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Usuario
+                </th>
+                <th>
+                    Edad
+                </th> 
+                 <th>
+                    Género
+                </th>                 
+                <th>
+                    Película Vista
+                </th>               
+            </tr>
+            @foreach(var Usuario in Model)
+            {
+              <tr>
+                <td>
+                    @Usuario.fecha
+                </td>
+                <td>
+                    @Usuario.nombre
+                </td>
+                <td>
+                    @Usuario.edad
+                </td>
+                <td>
+                    @Usuario.genero
+                </td>               
+                <td>
+                    @Usuario.vista
+                </td>                                
+              </tr>
+            }
+        </table>        
+    </body>
+</html>

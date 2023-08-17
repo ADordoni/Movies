@@ -1,0 +1,40 @@
+﻿@model Movies.Models.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificacion</title>
+</head>
+<body>
+    <div>
+        @ViewBag.mensaje
+        <form method="post" action="/CargaUsuario/Modificacion">  
+            Número de Usuario:            
+            <input type="number" name="id" value="@Model.id" readonly />
+            <br />
+            Username:            
+            <input type="text" name="nombre" value="@Model.nombre" />
+            <br />            
+            Fecha de nacimiento:
+            <input type="text" name="fechanac" value="@Model.fecha" />
+            <br />
+            Género:
+            <select id="genero" name="genero" >
+              <option selected>@Model.genero</option>
+              <option>F</option>
+              <option>M</option>
+             </select>
+            <br />
+            <input type="submit" name="confirmar" />
+        </form>
+    </div>
+    <div>
+        <a href="/CargaUsuario/Index">Usuarios</a>
+    </div>
+</body>
+</html>

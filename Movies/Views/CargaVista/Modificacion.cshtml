@@ -1,0 +1,39 @@
+﻿@model Movies.Models.Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificacion</title>
+</head>
+<body>
+    <div>
+        @ViewBag.mensaje
+        <form method="post" action="/CargaVista/Modificacion">  
+            Registro:            
+            <input type="number" name="id2" value="@Model.id2" readonly />
+            <br />
+            Número de cliente:            
+            <input type="number" name="id" value="@Model.id" readonly />
+            <br /> 
+            Nombre:            
+            <input type="text" name="nombre" value="@Model.nombre" readonly />
+            <br />   
+            Película:
+            <input type="text" name="pelicula" value="@Model.vista" />
+            <br />
+            Fecha:
+            <input type="text" name="periodo" value ="@Model.fecha"/>
+            <br />
+            <input type="submit" name="confirmar" />
+        </form>
+    </div>
+    <div>
+        <a href="/CargaVista/Index">Vistas</a>
+    </div>
+</body>
+</html>

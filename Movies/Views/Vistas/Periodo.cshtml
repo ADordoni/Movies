@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Movies.Models.Usuario>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Periodo</title>
+    </head>    
+    <body>
+        <div>
+            <a href="/Vistas/Index">Tabla Central</a>
+        </div>        
+        <table class="table">
+            <tr>                
+                 <th>
+                    Período
+                </th>
+                <th>
+                    Cantidad de Películas
+                </th>               
+            </tr>
+            @foreach(var Usuario in Model)
+            {
+              <tr>                
+                <td>
+                    @Usuario.periodo
+                </td>
+                <td>
+                    @Usuario.pelis
+                </td>                                
+              </tr>
+            }
+        </table>        
+    </body>
+</html>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Movies.Models.Usuario>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <a href="/Home/Gestion">Inicio</a>
+        </div>
+        <div>
+            <a href="/CargaVista/Alta">Agregar</a>
+        </div>                
+        <table class="table">
+            <tr> 
+                <th>
+                    Registro
+                </th>
+                 <th>
+                    ID
+                </th>
+                <th>
+                    Cliente
+                </th>
+                 <th>
+                    Película
+                </th>
+                <th>
+                    Fecha
+                </th>
+            </tr>
+            @foreach(var Usuario in Model)
+            {
+              <tr>
+                  <td>
+                    @Usuario.id2
+                </td>
+                <td>
+                    @Usuario.id
+                </td>
+                <td>
+                    @Usuario.nombre
+                </td>
+                <td>
+                    @Usuario.vista
+                </td>
+                <td>
+                    @Usuario.fecha
+                </td>
+                <td>
+                    <a href="/CargaVista/Modificacion?id=@Usuario.id2">Modificar</a>
+                </td>
+                <td>
+                    <a href="/CargaVista/Baja?id=@Usuario.id2">Borrar</a>
+                </td>                
+              </tr>
+            }
+        </table>        
+    </body>
+</html>

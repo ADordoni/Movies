@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Movies.Models.Usuario>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Usuarios</title>
+    </head>
+    <body>       
+        <div>
+            <a href="/CargaUsuario/Alta">Agregar</a>
+        </div>
+        <div>
+            <a href="/Home/Gestion">Inicio</a>
+        </div>
+        <table class="table">
+            <tr> 
+                 <th>
+                    Número de Cliente
+                </th>
+                 <th>
+                    Username
+                </th>                 
+                 <th>
+                    Fecha de nacimiento
+                </th>
+                <th>
+                    Género
+                </th>
+            </tr>
+            @foreach(var Usuario in Model)
+            {                
+            <tr>
+                <td>
+                    @Usuario.id
+                </td>  
+                <td>
+                    @Usuario.nombre
+                </td>                
+                <td>
+                    @Usuario.fecha
+                </td>
+                <td>
+                    @Usuario.genero
+                </td>
+                <td>                    
+                    <a href="/CargaUsuario/Modificacion?id=@Usuario.id">Modificar</a>
+                </td>                                
+              </tr>
+            }
+        </table>        
+    </body>
+</html>

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+        @ViewBag.mensaje
+        <form method="post" action="/CargaUsuario/Alta"> 
+            <label for="username">Username:</label>
+            <input id="username" type="text" name="nombre" />
+            <br />            
+            <label for="date">Fecha de nacimiento:</label>
+            <input id="date" type="date" name="fechanac" />
+            <br />
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+              <option selected>F</option>
+              <option>M</option>   
+            </select>            
+            <br />
+            <input type="submit" name="confirmar" />
+        </form>
+    </div>
+    <div>
+        <a href="/CargaUsuario/Index">Usuarios</a>
+    </div>
+</body>
+</html>
