@@ -1,0 +1,26 @@
+CREATE TABLE [dbo].[usuarios](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [varchar](50) NOT NULL,
+	[fechanac] [date] NOT NULL,
+	[genero] [varchar](1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+CREATE TABLE [dbo].[vistas](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id_usuarios] [int] NOT NULL,
+	[peliculas] [varchar](50) NOT NULL,
+	[periodo] [date] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[vistas]  WITH CHECK ADD FOREIGN KEY([id_usuarios])
+REFERENCES [dbo].[usuarios] ([id])
+GO
