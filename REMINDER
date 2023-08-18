@@ -1,0 +1,2 @@
+In AdminUser, AdminView and Visualizacion models, complete the assignment to the cadena variable: fill the "Data Source" field with the server name,
+fill the "Initial Catalog" field with the data base name and fill the "Integrated Security" field (write "true" if there is no password)
